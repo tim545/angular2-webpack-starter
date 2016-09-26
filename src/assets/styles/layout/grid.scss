@@ -1,0 +1,70 @@
+
+$grid-columns: 12;
+
+@mixin float-grid-columns($class) {
+  @mixin col($index) { // initial
+    $item: ~"@include col-${class}-${index}";
+    @include col(($index + 1), $item);
+  }
+  @mixin col($index, $list) when ($index =< $grid-columns) { // general
+    $item: ~"@include col-${class}-${index}";
+    @include col(($index + 1), ~"${list}, ${item}");
+  }
+  @mixin col($index, $list) when ($index > $grid-columns) { // terminal
+    ${list} {
+      float: left;
+    }
+  }
+  @include col(1); // kickstart it
+}
+
+@mixin calc-grid-column($index, $class, $type) when ($type = width) and ($index > 0) {
+  @include col-${class}-${index} {
+    width: percentage(($index / $grid-columns));
+  }
+}
+@mixin calc-grid-column($index, $class, $type) when ($type = push) and ($index > 0) {
+  @include col-${class}-push-${index} {
+    left: percentage(($index / $grid-columns));
+  }
+}
+@mixin calc-grid-column($index, $class, $type) when ($type = push) and ($index = 0) {
+  @include col-${class}-push-0 {
+    left: auto;
+  }
+}
+@mixin calc-grid-column($index, $class, $type) when ($type = pull) and ($index > 0) {
+  @include col-${class}-pull-${index} {
+    right: percentage(($index / $grid-columns));
+  }
+}
+@mixin calc-grid-column($index, $class, $type) when ($type = pull) and ($index = 0) {
+  @include col-${class}-pull-0 {
+    right: auto;
+  }
+}
+@mixin calc-grid-column($index, $class, $type) when ($type = offset) {
+  @include col-${class}-offset-${index} {
+    margin-left: percentage(($index / $grid-columns));
+  }
+}
+
+// Basic looping in LESS
+@mixin loop-grid-columns($index, $class, $type) when ($index >= 0) {
+  .calc-grid-column($index, $class, $type);
+  // next iteration
+  .loop-grid-columns(($index - 1), $class, $type);
+}
+
+// Create grid for specific class
+.make-grid($class) {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class, width);
+  @include loop-grid-columns($grid-columns, $class, pull);
+  @include loop-grid-columns($grid-columns, $class, push);
+  @include loop-grid-columns($grid-columns, $class, offset);
+}
+
+@media (min-width: 1400px) {
+  .make-grid(xl);
+}

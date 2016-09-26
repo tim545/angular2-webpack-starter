@@ -1,0 +1,27 @@
+.headerbar {
+  border-bottom: 1px solid #eee;
+  background: #188ae4;
+  height: 100px;
+  padding: 5px;
+  text-align: center;
+  @media screen and (max-width:768px) {
+    text-align: center;
+    height: 50px;
+  }
+  .logo-link {
+    width: 150px;
+    display: block;
+    padding-top: 15px;
+    margin: 0 auto;
+    @media screen and (max-width:768px) {
+      width: 80px;
+      padding-top: 5px;
+    }
+  }
+}
+
+.headerbar::after {
+  clear: both;
+  display: block;
+  content: '';
+}
