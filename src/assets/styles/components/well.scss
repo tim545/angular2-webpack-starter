@@ -1,0 +1,22 @@
+.well {
+  @include border-radius();
+  border: 0;
+  @include noshadow();
+  background-color: #e4e7ea;
+}
+
+.well-white {
+  background-color: #fff;
+}
+
+.well-blue {
+  background-color: $bg-light-blue;
+}
+
+.well-sqr {
+  @include border-radius(0);
+}
+
+.well-mb-sm {
+  margin-bottom: 8px;
+}

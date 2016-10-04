@@ -1,0 +1,61 @@
+.modal-dialog {
+  border: 0;
+}
+
+.modal-content {
+  @include border-radius(2px);
+  @include box-shadow(0 5px 0, rgba(0,0,0,0.4));
+  border: 0;
+  .tab-content {
+    @include noshadow();
+  }
+}
+
+.modal-title {
+  font-size: 20px;
+  color: #333333;
+}
+
+.modal-header .close {
+  margin-top: 4px;
+}
+
+.modal-backdrop.in {
+  opacity: 0.65;
+}
+
+.modal-footer {
+  margin-top: 0;
+}
+
+// Containing class around a modal
+.modal.modal-confirm-delete {
+  .modal-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    min-width: 260px;
+    @include translate(-50%, -50%);
+    @media screen and (max-width: 768px) {
+      p, label {
+        font-size: 0.9em;
+      }
+
+      .btn-success-alt, .btn-danger-alt {
+        margin-bottom: 10px;
+      }
+
+      .hr {
+        margin-top: 20px;
+      }
+
+      .modal-footer {
+        text-align: center;
+      }
+    }
+  }
+  .modal-footer {
+    border-top: none;
+  }
+}

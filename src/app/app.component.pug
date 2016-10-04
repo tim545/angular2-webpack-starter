@@ -1,0 +1,22 @@
+main: .container
+  nav.navbar.navbar-inverse.navbar-fixed-top: .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed(
+        type="button"
+        data-toggle="collapse"
+        aria-expanded="false"
+        on-click="mobileMenu = !mobileMenu"
+      )
+        span.sr-only Toggle Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="") Xref Style Guide
+
+    .navbar-collapse([class.collapse]="mobileMenu")
+      ul.nav.navbar-nav
+        li: a(routerLink="/") Overview
+  router-outlet
+
+  h1 Hello from Angular App with Webpack
+  img(src="/images/angular.png")

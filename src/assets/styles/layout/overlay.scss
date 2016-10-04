@@ -44,7 +44,7 @@
     }
   }
   @include opacity(1);
-  @include transition(opacity 0.3s ease-in-out, visibility 0.3s ease-in-out);
+  @include transition("opacity 0.3s ease-in-out, visibility 0.3s ease-in-out");
   &.overlay-hide {
     @include opacity(0);
     overflow: hidden;

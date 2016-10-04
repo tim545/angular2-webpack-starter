@@ -46,7 +46,7 @@ h4 {
 }
 
 strong {
-  .text-weight-bold;
+  @extend .text-weight-bold;
 }
 
 table {

@@ -1,0 +1,103 @@
+.form-group {
+  &.has-error {
+    .input-group-btn {
+      button {
+        border-color: $form-danger;
+      }
+    }
+  }
+  &.has-success {
+    .input-group-btn {
+      button {
+        border-color: $form-success;
+      }
+    }
+  }
+  &::after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+
+  &.has-feedback {
+    > .form-control-feedback {
+      // Override font awesome line height
+      line-height: 34px;
+
+      @media screen and (max-width: 992px) {
+        top: 0;
+      }
+
+      // Make icon clickable
+      &.clickable {
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+.form-bordered {
+  .form-group {
+    margin: 0;
+    padding: 15px 0;
+    border-top: 1px solid #d3d7db;
+    &:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.form-striped {
+  .form-group {
+    margin: 0;
+    padding: 15px 0;
+    &:nth-child(even) {
+      background: #fcfcfc;
+    }
+  }
+}
+
+.form-inline {
+  .form-group {
+    margin-right: 20px;
+  }
+  .checkbox {
+    margin-right: 20px;
+  }
+}
+
+.form-control {
+  height: 36px;
+  background: #f9f9f9;
+  padding: 5px 10px;
+  font-size: 13px;
+  @include border-radius();
+  @include noshadow();
+  &:focus {
+    border-color: #999999;
+    @include box-shadow(3px 3px 0, rgba(12,12,12,0.05));
+  }
+  &::-webkit-input-placeholder {
+    color: $text-light;
+    font-weight: lighter;
+    font-family: "LatoLight", "HelveticaNeue-Light";
+  }
+}
+
+.control-label {
+  @extend .text-sm;
+  @extend .text-light;
+  padding-top: 0;
+}
+
+.has-success .form-control,
+.has-warning .form-control,
+.has-error .form-control {
+  @include noshadow();
+}
+
+.has-success .form-control:focus,
+.has-warning .form-control:focus,
+.has-error .form-control:focus {
+  @include box-shadow(5px 5px 0, rgba(12,12,12,0.05));
+}

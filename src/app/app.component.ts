@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
-import '../../public/css/styles.css';
+
+const template = require('./app.component.pug');
+const styles = require('./app.component.scss');
 
 @Component({
   selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template,
+  styles: [styles]
 })
 
-export class AppComponent { }
+export class AppComponent {
+  public mobileMenu: Boolean;
+
+  constructor() {
+    this.mobileMenu = true;
+  }
+}

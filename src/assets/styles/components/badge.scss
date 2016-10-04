@@ -1,0 +1,27 @@
+.badge {
+  @include border-radius();
+  font-weight: normal;
+  font-size: 11px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.badge-primary {
+  background-color: $xref-colour;
+}
+
+.badge-warning {
+  background-color: $warning-color;
+}
+
+.badge-success {
+  background-color: $success-color;
+}
+
+.badge-danger {
+  background-color: $danger-color;
+}
+
+.badge-info {
+  background-color: $info-color;
+}

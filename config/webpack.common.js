@@ -37,6 +37,21 @@ module.exports = {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
         loader: 'raw'
+      },
+      {
+        include: /\.pug$/,
+        loader: 'pug-html-loader'
+      },
+      {
+        test: /\.scss$/,
+        include: helpers.root('src', 'app'),
+        exclude: /global-styles\.scss$/,
+        loaders: ["to-string", "style", "css", "sass"]
+      },
+      {
+        test: /\.js$/,
+        include: helpers.root('src', 'app'),
+        loader: 'raw'
       }
     ]
   },

@@ -1,0 +1,26 @@
+// Third party
+@import "vendor/bootstrap.min.scss";
+
+// Base files
+@import "base/fonts.scss";
+@import "base/variables.scss";
+@import "base/mixins.scss";
+@import "base/general.scss";
+
+// Layout
+@import "layout/headerpanel.scss";
+@import "layout/mainpanel.scss";
+@import "layout/overlay.scss";
+@import "layout/grid.scss";
+@import "layout/sticky-footer.scss";
+@import "layout/page-header.scss";
+
+// Components
+@import "components/alert.scss";
+@import "components/badge.scss";
+@import "components/button.scss";
+@import "components/form.scss";
+@import "components/modal.scss";
+@import "components/table.scss";
+@import "components/typography.scss";
+@import "components/well.scss";

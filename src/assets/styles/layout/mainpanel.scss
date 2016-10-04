@@ -7,7 +7,7 @@
 
 .isMobile {
   .mainpanel {
-    .transition(margin-left 0.3s ease-in-out);
+    @include transition("margin-left 0.3s ease-in-out");
   }
 }
 
@@ -32,7 +32,7 @@
     margin-right:5px;
     padding:6px 7px;
     border:2px solid $main-bg-color;
-    .border-radius(50px);
+    @include border-radius(50px);
   }
   h2 {
     font-size:28px;
@@ -139,7 +139,7 @@ form .form-group:last-child {
   color:#333333;
   margin-bottom:15px;
   margin-top:0;
-  @include text-weight-bold;
+  @extend .text-weight-bold;
 }
 
 .subtitle-lined {
