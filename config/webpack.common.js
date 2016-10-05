@@ -34,11 +34,6 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
       },
       {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw'
-      },
-      {
         include: /\.pug$/,
         loader: 'pug-html-loader'
       },

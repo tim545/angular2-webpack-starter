@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-const template = require('./app.component.pug');
-const styles = require('./app.component.scss');
+const template = require('./app.component.html');
+const styles = [require('./app.component.css')];
 
 @Component({
   selector: 'my-app',
   template,
-  styles: [styles]
+  styles
 })
 
 export class AppComponent {

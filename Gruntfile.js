@@ -20,6 +20,14 @@ module.exports = function(grunt) {
         src: '**/*.*',
         dest: 'dist/'
       }
+    },
+
+    clean: {
+      ngi18n: [
+        'src/**/**.js',
+        'src/**/**.map',
+        'src/**/**.metadata.json'
+      ]
     }
 
   };
@@ -27,5 +35,6 @@ module.exports = function(grunt) {
   grunt.initConfig(config);
 
   grunt.registerTask('default', ['copy', 'sass']);
+  grunt.registerTask('clean-i18n', ['clean:ngi18n']);
 
 };
