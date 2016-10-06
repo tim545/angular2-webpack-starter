@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
+import { TranslateService } from 'ng2-translate';
 
 const template = require('./home.component.html');
-const styles = [require('./home.component.css')];
+const styles = [require('./home.component.scss')];
 
-@Component({
-  selector: 'home',
+const componentConfig = {
+  selector: 'starter-home',
   template,
   styles
-})
+};
 
-export class HomeComponent {}
+@Component(componentConfig)
+export class HomeComponent {
+  tmpl = {
+    para: ''
+  };
+
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
+}

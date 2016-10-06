@@ -9,6 +9,9 @@ describe('App', () => {
 
   it ('should work', () => {
     let fixture = TestBed.createComponent(PageNotFoundComponent);
-    expect(fixture.componentInstance instanceof PageNotFoundComponent).toBe(true, 'should create PageNotFoundComponent');
+    expect(fixture.componentInstance instanceof PageNotFoundComponent).toBe(
+      true,
+      'should create PageNotFoundComponent'
+    );
   });
 });

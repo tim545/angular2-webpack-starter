@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 const template = require('./app.component.html');
-const styles = [require('./app.component.css')];
+const styles = [require('./app.component.scss')];
 
 @Component({
-  selector: 'my-app',
+  selector: 'starter-app',
   template,
   styles
 })

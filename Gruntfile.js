@@ -34,7 +34,9 @@ module.exports = function(grunt) {
 
   grunt.initConfig(config);
 
-  grunt.registerTask('default', ['copy', 'sass']);
+  grunt.registerTask('precompile', ['copy', 'sass']);
   grunt.registerTask('clean-i18n', ['clean:ngi18n']);
+
+  grunt.registerTask('default', ['precompile']);
 
 };
