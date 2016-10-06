@@ -28,6 +28,17 @@ module.exports = function(grunt) {
         'src/**/**.map',
         'src/**/**.metadata.json'
       ]
+    },
+
+    xliff: {
+      options: {
+        extract: true,
+        exportText: true,
+        languages: ['en']
+      },
+      files: {
+        'extracted//': ['public/i18n/*.json']
+      }
     }
 
   };
