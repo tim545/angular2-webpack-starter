@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 
-const template = require('./home.component.html');
+const template = require('./home.component.pug');
 const styles = [require('./home.component.scss')];
 
 const componentConfig = {

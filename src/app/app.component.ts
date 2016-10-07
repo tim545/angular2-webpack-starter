@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-const template = require('./app.component.html');
+const template = require('./app.component.pug');
 const styles = [require('./app.component.scss')];
 
 @Component({
