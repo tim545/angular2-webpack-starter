@@ -8,7 +8,6 @@
     "dev": "rimraf dist && grunt && webpack --config config/webpack.dev.js --progress --profile --bail",
     "staging": "rimraf dist && grunt && webpack --config config/webpack.staging.js --progress --profile --bail",
     "prod": "rimraf dist && grunt && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install",
     "i18n": "ng-xi18n"
   },
   "license": "MIT",
