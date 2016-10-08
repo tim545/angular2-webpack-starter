@@ -1,6 +1,22 @@
 Angular2 Webpack Starter
 ===
 
+#### Installing
+
+Fork or download this repo into a new project and run `npm install && npm start`.
+
+#### Setting up for your own project
+
+A few things need to be changed from the 'example' settings:
+
+1. Update the `tslint.json` file to use different prefix's:
+```
+"pipe-naming": [true, "camelCase", "your-prefix"],
+"directive-selector-prefix": [true, "your-prefix"],
+"component-selector-prefix": [true, "your-prefix"],
+```
+
+2. Update the two example components so their `selector` values use the prefix you defined in the previous step.
 
 #### Caveats
 
