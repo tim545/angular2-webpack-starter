@@ -25,6 +25,7 @@ A few things need to be changed from the 'example' settings:
 - Based on the official Angular2 [documentation](https://angular.io/docs/ts/latest/guide/webpack.html) for webpack
 - Modular file structure
 - Webpack & Typescript build system
+- Unit tests with [Karma](http://karma-runner.github.io/) and [Jasmine](jasmine.github.io)
 - Type management using @types
 - Designed to produce static distribution files for production in a front-end-only API backed application
 - Full I18N support with [ng2-translate](https://github.com/ocombe/ng2-translate)
