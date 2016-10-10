@@ -12,10 +12,6 @@ const componentConfig = {
 
 @Component(componentConfig)
 export class HomeComponent {
-  tmpl = {
-    para: ''
-  };
-
   constructor(translate: TranslateService) {
     translate.setDefaultLang('en');
     translate.use('en');

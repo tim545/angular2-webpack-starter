@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { Ng2BootstrapModule } from 'ng2-bootstrap';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+import { SharedModule } from './shared/shared.module';
 import { routing, appRoutingProviders }  from './shared/router';
 
 const moduleConfig = {
@@ -15,12 +13,11 @@ const moduleConfig = {
     BrowserModule,
     routing,
     HttpModule,
-    TranslateModule.forRoot()
+    Ng2BootstrapModule,
+    SharedModule
   ],
   declarations: [
-    AppComponent,
-    HomeComponent,
-    PageNotFoundComponent
+    AppComponent
   ],
   providers: [
     appRoutingProviders
