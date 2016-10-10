@@ -3,11 +3,11 @@ Angular2 Webpack Starter
 
 Starter project for new Angular2 using Webpack applications based off the official [documentation](https://angular.io/docs/ts/latest/guide/webpack.html).
 
-#### Installing
+### Installing
 
 Fork or download this repo into a new project and run `npm install && npm start`.
 
-#### Setting up for your own project
+### Setting up for your own project
 
 A few things need to be changed from the 'example' settings:
 
@@ -20,7 +20,7 @@ A few things need to be changed from the 'example' settings:
 
 2. Update the two example components so their `selector` values use the prefix you defined in the previous step.
 
-#### Features
+### Features
 
 - Based on the official Angular2 [documentation](https://angular.io/docs/ts/latest/guide/webpack.html) for webpack
 - Modular file structure
@@ -31,7 +31,7 @@ A few things need to be changed from the 'example' settings:
 - [Sass](sass-lang.com)
 - [Pug](pugjs.org) templates
 
-#### File structure
+### File structure
 
 **Source directory** uses a modular file structure for the application code, the main (app) module imports package dependencies, the router and the share module which imports all global project modules (e.g. page routes). Each child module has it's own directives/components/services which are specific to that module.
 
@@ -51,10 +51,10 @@ A few things need to be changed from the 'example' settings:
 -- -- -- global-styles.scss
 ```
 
-#### Architecture
+### Architecture
 
 Produces static front-end-only applications, which is best for using in a static hosting environment such as Amazon S3 or Firebase. The application expects to be supported by an API which would have to be a CORS enabled API.
 
-#### Caveats
+### Caveats
 
 - **Pug**: When using the [Pug](https://pugjs.org) template engine some ng2 syntax needs special treatment. Event, two-way and attribute binding must be wrapped in single quotes, as explained in this [issue](https://github.com/pugjs/pug/issues/2050).
