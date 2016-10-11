@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "A webpack starter for Angular2",
   "scripts": {
-    "start": "rimraf dist && grunt && webpack-dev-server --inline --progress --port 4200 --open --content-base dist",
+    "start": "rimraf dist && webpack-dev-server --inline --progress --port 4200 --open --content-base dist",
     "test": "karma start",
-    "dev": "rimraf dist && grunt && webpack --config config/webpack.dev.js --progress --profile --bail",
-    "staging": "rimraf dist && grunt && webpack --config config/webpack.staging.js --progress --profile --bail",
-    "prod": "rimraf dist && grunt && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "dev": "rimraf dist && webpack --config config/webpack.dev.js --progress --profile --bail",
+    "staging": "rimraf dist && webpack --config config/webpack.staging.js --progress --profile --bail",
+    "prod": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "i18n": "ng-xi18n"
   },
   "license": "MIT",
@@ -35,6 +35,7 @@
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^2.2.4",
     "codelyzer": "^1.0.0-beta.0",
+    "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
@@ -45,10 +46,13 @@
     "grunt-xliff": "0.0.8",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
+    "istanbul-instrumenter-loader": "^0.2.0",
     "jasmine-core": "^2.4.1",
     "karma": "^1.2.0",
+    "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.2",
+    "karma-remap-coverage": "^0.1.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "load-grunt-tasks": "^3.5.2",
@@ -68,9 +72,6 @@
     "typescript": "^2.0.2",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.14.0",
-    "istanbul-instrumenter-loader": "^0.2.0",
-    "karma-coverage": "^1.1.1",
-    "karma-remap-coverage": "^0.1.1"
+    "webpack-merge": "^0.14.0"
   }
 }

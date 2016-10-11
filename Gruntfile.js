@@ -5,23 +5,6 @@ module.exports = function(grunt) {
 
   const config = {
 
-    sass: {
-      dist: {
-        files: [
-          {src: ['src/assets/styles/global-styles.scss'], dest: 'dist/styles.css'}
-        ]
-      }
-    },
-
-    copy: {
-      dist: {
-        expand: true,
-        cwd: 'public',
-        src: '**/*.*',
-        dest: 'dist/'
-      }
-    },
-
     clean: {
       ngi18n: [
         'src/**/**.js',
@@ -44,10 +27,6 @@ module.exports = function(grunt) {
   };
 
   grunt.initConfig(config);
-
-  grunt.registerTask('precompile', ['copy', 'sass']);
   grunt.registerTask('clean-i18n', ['clean:ngi18n']);
-
-  grunt.registerTask('default', ['precompile']);
 
 };

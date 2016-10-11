@@ -1,13 +1,15 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
-    'app': './src/main.ts'
+    'app': './src/main.ts',
+    'styles': './src/assets/styles/global-styles.scss'
   },
 
   resolve: {
@@ -36,19 +38,18 @@ module.exports = {
         loader: 'file?name=assets/[name].[hash].[ext]'
       },
       {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-      },
-      {
         include: /\.pug$/,
         loader: 'pug-html-loader'
       },
       {
         test: /\.scss$/,
         include: helpers.root('src', 'app'),
-        exclude: /global-styles\.scss$/,
         loaders: ["to-string", "style", "css", "sass"]
+      },
+      {
+        test: /global-styles.scss$/,
+        include: helpers.root('src', 'assets'),
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap')
       },
       {
         test: /\.js$/,
@@ -64,8 +65,14 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    })
+      template: 'src/index.pug'
+    }),
+
+    new ExtractTextPlugin("styles.css"),
+
+    new CopyWebpackPlugin(
+      [{from: 'public'}]
+    )
   ],
 
   tslint: {
